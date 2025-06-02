@@ -21,6 +21,8 @@ const Projects = ({ enableNext }) => {
 
   const handleChange = (index, event) => {
     const { name, value } = event.target;
+    enableNext(false);
+
     const updated = projectList.slice();
     updated[index][name] = value;
     setProjectList(updated);
@@ -28,6 +30,8 @@ const Projects = ({ enableNext }) => {
 
   const handleEditorChanges = (e, index , discription) => {
     const { value } = e.target;
+    enableNext(false);
+
     const updated = [...projectList];
     updated[index][discription] = value;
     setProjectList(updated);
@@ -52,7 +56,6 @@ const Projects = ({ enableNext }) => {
   };
 
   const save = (e) => {
-    enableNext(false);
     setLoader(true);
     const data ={
       data:{

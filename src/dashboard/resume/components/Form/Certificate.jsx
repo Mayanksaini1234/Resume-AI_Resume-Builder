@@ -13,24 +13,25 @@ const Certificate = ({ enableNext }) => {
     issuedBy: "",
     startDate: "",
     endDate: "",
-    link:"",
-    discription:"",
-
+    link: "",
+    discription: "",
   };
 
   const [loader, setLoader] = useState(false);
   const id = useParams();
-  const [certificateList , setCertificateList] = useState([formData]);
+  const [certificateList, setCertificateList] = useState([formData]);
 
   const handleChange = (index, event) => {
     const { name, value } = event.target;
+    enableNext(false);
     const updated = certificateList.slice();
     updated[index][name] = value;
     setCertificateList(updated);
   };
 
-  const handleEditorChanges = (e, index , discription) => {
+  const handleEditorChanges = (e, index, discription) => {
     const { value } = e.target;
+    enableNext(false);
     const updated = [...certificateList];
     updated[index][discription] = value;
     setCertificateList(updated);
@@ -43,25 +44,24 @@ const Certificate = ({ enableNext }) => {
   useEffect(() => {
     setResume({
       ...resumeInfo,
-      certificate:certificateList
+      certificate: certificateList,
     });
   }, [certificateList]);
 
   const remove = () => {
-    setCertificateList(certificateList.slice(0,-1))
+    setCertificateList(certificateList.slice(0, -1));
   };
   const add = () => {
-setCertificateList([...certificateList,formData])
+    setCertificateList([...certificateList, formData]);
   };
 
   const save = (e) => {
-    enableNext(false);
     setLoader(true);
-    const data ={
-      data:{
-        certificate : certificateList.map(({id,...rest})=>rest)
-      }
-    }
+    const data = {
+      data: {
+        certificate: certificateList.map(({ id, ...rest }) => rest),
+      },
+    };
     globalAPI.UpdateResume(id?.resumeId, data).then(
       (res) => {
         console.log(res);
@@ -126,7 +126,7 @@ setCertificateList([...certificateList,formData])
 
               <div>
                 <label className="block text-sm font-medium grid-cols-2">
-                   Certificate Link
+                  Certificate Link
                 </label>
                 <input
                   type="text"
@@ -140,7 +140,7 @@ setCertificateList([...certificateList,formData])
               </div>
               <div>
                 <label className="block text-sm font-medium grid-cols-2">
-Start Date 
+                  Start Date
                 </label>
                 <input
                   type="date"
@@ -154,7 +154,7 @@ Start Date
               </div>
               <div>
                 <label className="block text-sm font-medium grid-cols-2">
-                  End Date 
+                  End Date
                 </label>
                 <input
                   type="date"

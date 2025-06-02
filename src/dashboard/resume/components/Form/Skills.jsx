@@ -38,6 +38,8 @@ const Skills = ({ enableNext }) => {
 
   const handeleTitleChange = (event, skillIndex) => {
     const value = event.target.value;
+    enableNext(false);
+
     const updated = [...skillList];
     updated[skillIndex].skillTitle = value;
     setSkillList(updated);
@@ -45,6 +47,8 @@ const Skills = ({ enableNext }) => {
 
   const handleSkillName = (event, skillIndex, nameIndex) => {
     const { value } = event.target;
+    enableNext(false);
+
     const updated = [...skillList];
     updated[skillIndex].skillName[nameIndex].name = value;
     setSkillList(updated);
@@ -63,7 +67,6 @@ const Skills = ({ enableNext }) => {
   };
 
   const save = () => {
-    enableNext(false);
     setLoader(true);
     const cleanedSkills = skillList.map(({ id, skillName, ...rest }) => ({
       ...rest,

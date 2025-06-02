@@ -68,7 +68,6 @@ const Summary = ({ enableNext }) => {
   const SubmitHandler = (e) => {
     e.preventDefault();
     setLoader(true);
-    enableNext(false)
     const data = {
       data: formData,
     };

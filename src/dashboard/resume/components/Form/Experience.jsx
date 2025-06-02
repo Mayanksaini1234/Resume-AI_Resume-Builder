@@ -29,6 +29,8 @@ const Experience = ({ enableNext }) => {
 
   const handleChange = (index, event) => {
     const { name, value } = event.target;
+    enableNext(false);
+
     const experienceList = experience.slice();
     experienceList[index][name] = value;
     setExpereince(experienceList);
@@ -36,6 +38,8 @@ const Experience = ({ enableNext }) => {
 
   const handleRichTextEditor = (event, index, name) => {
     const experienceList = experience.slice();
+    enableNext(false);
+
     const { value } = event.target;
     experienceList[index][name] = value;
     setExpereince(experienceList);
@@ -58,7 +62,6 @@ const Experience = ({ enableNext }) => {
   };
   
   const save = (e) => {
-    enableNext(false);
     setLoader(true);
     const data = {
       data: {

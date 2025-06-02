@@ -24,22 +24,22 @@ const AddResume = () => {
 
   const createResume = async () => {
     setLoader(true);
-    const uuid = uuidv4();
+    const uid = uuidv4();
     const data = {
       data: {
         title,
-        uuid,
+        uid,
         userName: user?.fullName,
         userEmail: user?.primaryEmailAddress?.emailAddress,
       },
-    };
+    };  
 
     globalAPI.createResume(data).then(
       (res) => {
-        console.log(res.data.data.documentId);
+        console.log(res)
         if (res) {
           setLoader(false);
-          navigate("/dashboard/resume/" + res.data.data.documentId + "/edit");
+          navigate("/dashboard/resume/" + res.data.data.documentId+ "/edit");
         }
       },
       (err) => {

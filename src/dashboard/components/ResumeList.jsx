@@ -25,8 +25,8 @@ const ResumeList = ({ resume, refreshData }) => {
   const [deleteHandle, setDeleteHadle] = useState(false);
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
-
-  const deleteResume = () => {
+console.log(resume.documentId)
+  const deleteResume = () => { 
     setLoader(true);
     globalAPI.deleteResume(resume.documentId).then(
       (res) => {

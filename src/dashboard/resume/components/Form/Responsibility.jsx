@@ -22,6 +22,8 @@ const Responsibility = ({ enableNext }) => {
 
   const handleChange = (index, event) => {
     const { name, value } = event.target;
+    enableNext(false);
+
     const updated = responsibilityList.slice();
     updated[index][name] = value;
     setResponsibilityList(updated);
@@ -29,6 +31,8 @@ const Responsibility = ({ enableNext }) => {
 
   const handleEditorChanges = (e, index, discription) => {
     const { value } = e.target;
+    enableNext(false);
+
     const updated = [...responsibilityList];
     updated[index][discription] = value;
     setResponsibilityList(updated);
@@ -53,7 +57,6 @@ const Responsibility = ({ enableNext }) => {
   };
 
   const save = (e) => {
-    enableNext(false);
     setLoader(true);
     const data = {
       data: {

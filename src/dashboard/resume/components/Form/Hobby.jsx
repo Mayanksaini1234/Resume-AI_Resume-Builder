@@ -19,6 +19,8 @@ const Hobby = ({ enableNext }) => {
 
   const handleChange = (index, event) => {
     const { name, value } = event.target;
+    enableNext(false);
+
     const updated = hobbyList.slice();
     updated[index][name] = value;
     setHobbyList(updated);
@@ -26,6 +28,8 @@ const Hobby = ({ enableNext }) => {
 
   const handleEditorChanges = (e, index, description) => {
     const { value } = e.target;
+    enableNext(false);
+
     const updated = [...hobbyList];
     updated[index][description] = value;
     setHobbyList(updated);
@@ -50,7 +54,6 @@ const Hobby = ({ enableNext }) => {
   };
 
   const save = (e) => {
-    enableNext(false);
     setLoader(true);
     const data = {
       data: {

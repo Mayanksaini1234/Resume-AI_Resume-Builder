@@ -23,6 +23,8 @@ const Education = ({ enableNext }) => {
 
   const handleChange = (index, event) => {
     const { name, value } = event.target;
+    enableNext(false);
+
     const education = educationList.slice();
     education[index][name] = value;
     setEducationList(education);
@@ -47,7 +49,6 @@ resumeInfo && setEducationList(resumeInfo?.education)
   };
 
   const save = (e) => {
-    enableNext(false);
     setLoader(true);
     const data = {
       data: {
