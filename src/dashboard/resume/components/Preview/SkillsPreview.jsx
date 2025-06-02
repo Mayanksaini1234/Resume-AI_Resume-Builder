@@ -20,7 +20,7 @@ const SkillsPreview = ({ resumeInfo }) => {
         resumeInfo.skills1.map((data, index) => (
           <div key={index} className="flex flex-wrap items-center mt-1 text-base">
             {/* {console.log(data)} */}
-            <span className="font-semibold pr-1">{data.skillTitle} :</span>
+           {data?.skillTitle && (<span className="font-semibold pr-1">{data.skillTitle} :</span>)} 
             {data.skillName?.map((data1, index1) => (
               <span key={index1} className=" font-semibold  ">
                 {data1.name.trim()}
