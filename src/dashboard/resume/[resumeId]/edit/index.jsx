@@ -12,8 +12,8 @@ const EditResume = () => {
 
   console.log(Id?.resumeId);
   useEffect(() => {
-    getResume();
-    // setResume(dummy)
+    // getResume();
+    setResume(dummy)
   }, []);
 
   const getResume = () => {
