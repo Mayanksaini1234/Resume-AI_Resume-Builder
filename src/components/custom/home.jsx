@@ -16,7 +16,7 @@ import React, { useState } from "react";
 
 function Home() {
   const [openFaq, setOpenFaq] = useState(null);
-
+  
   const faqs = [
     {
       question: "How does the AI resume builder work?",
@@ -86,7 +86,7 @@ function Home() {
 
       {/* Stats Section */}
       <section className="py-16 px-6 max-w-screen-xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center p-6 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700">
             <Users className="h-8 w-8 text-indigo-600 dark:text-indigo-400 mx-auto mb-4" />
             <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
@@ -230,7 +230,7 @@ function Home() {
                 Download & Share
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Download your ATS-friendly resume in PDF or JPEG format and
+                Download your ATS-friendly resume in PDF format and
                 share it easily with employers and recruiters.
               </p>
             </div>
@@ -238,7 +238,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section
       <section className="py-20 px-6 max-w-screen-xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">What Our Users Say</h2>
@@ -295,7 +295,7 @@ function Home() {
           </div>
         </div>
       </section>
-
+ */}
       {/* FAQ Section */}
       <section className="py-20 px-6 max-w-screen-xl mx-auto">
         <div className="text-center mb-16">

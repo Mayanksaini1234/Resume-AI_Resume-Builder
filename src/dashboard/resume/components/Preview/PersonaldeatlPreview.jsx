@@ -21,40 +21,43 @@ const PersonalDetailPreview = ({ resumeInfo }) => {
                     href={resumeInfo?.portfolioUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className=" underline hover: hover:text-blue-600 transition-colors duration-200"
-                  >
+                    className=" underline text-blue-600 "
+                    >
                     Portfolio
                   </a>{" "}
                   {" | "}
                 </span>
               )}
-              {resumeInfo?.email} | {resumeInfo?.phone}
-            </span>
-          </div>
-        </div>
-        <div className="flex justify-between items-center font-semibold mt-1 text-base ">
-          {resumeInfo?.linkName1 && resumeInfo?.linkUrl1 && (
+              {/* {resumeInfo?.email} | {resumeInfo?.phone} */}
+              {resumeInfo?.linkName1 && resumeInfo?.linkUrl1 && (
             <a
               href={resumeInfo.linkUrl1}
               target="_blank"
               rel="noopener noreferrer"
-              className=" underline  hover:text-blue-600 transition-colors duration-200"
+              className=" underline text-blue-600 "
             >
               {resumeInfo.linkName1}
             </a>
           )}
-
+|
           {resumeInfo?.linkName2 && resumeInfo?.linkUrl2 && (
             <a
               href={resumeInfo.linkUrl2}
               target="_blank"
               rel="noopener noreferrer"
-              className=" underline  hover:text-blue-600 transition-colors duration-200"
+              className=" underline text-blue-600 "
             >
               {resumeInfo.linkName2}
             </a>
           )}
+
+            </span>
+          </div>
         </div>
+        <div className="flex justify-between items-center font-semibold mt-1 text-base ">
+         <div> {resumeInfo?.email} </div>    
+         <div>{resumeInfo?.phone}</div>
+              </div>
       </div>
     </div>
   );
