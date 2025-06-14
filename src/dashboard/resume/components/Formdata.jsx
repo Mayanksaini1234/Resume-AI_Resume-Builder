@@ -77,7 +77,7 @@ const Formdata = () => {
           }}
         />
       ) : activeIndex == 4 ? (
-        <Education
+        <Projects
           enableNext={(v) => {
             setEnableNext(v);
           }}
@@ -89,7 +89,7 @@ const Formdata = () => {
           }}
         />
       ) : activeIndex == 6 ? (
-        <Projects
+        <Education
           enableNext={(v) => {
             setEnableNext(v);
           }}
