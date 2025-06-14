@@ -21,9 +21,9 @@ const Preview = () => {
       <PersonaldeatlPreview resumeInfo={resumeInfo} />
       <SummaryPreview resumeInfo={resumeInfo} />
       <SkillsPreview resumeInfo={resumeInfo} />
-      <EducationPreview resumeInfo={resumeInfo} />
-      <ExperiencePreview resumeInfo={resumeInfo} />
       <ProjectsPreview resumeInfo={resumeInfo} />
+      <ExperiencePreview resumeInfo={resumeInfo} />
+      <EducationPreview resumeInfo={resumeInfo} />
       <CertificatePreview resumeInfo={resumeInfo} />
       <ResponsibilityPreview  resumeInfo={resumeInfo}/>
       <HobbyPreview resumeInfo={resumeInfo} />
