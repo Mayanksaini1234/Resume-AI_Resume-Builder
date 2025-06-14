@@ -28,7 +28,6 @@ const PersonalDetailPreview = ({ resumeInfo }) => {
                   {" | "}
                 </span>
               )}
-              {/* {resumeInfo?.email} | {resumeInfo?.phone} */}
               {resumeInfo?.linkName1 && resumeInfo?.linkUrl1 && (
             <a
               href={resumeInfo.linkUrl1}
