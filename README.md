@@ -2,7 +2,7 @@
 
 Welcome to **Resume.AI** — a smart, intuitive, and user-friendly web application designed to help you create **professional** and **customized resumes** effortlessly. Built with modern web technologies and AI integration, **Resume.AI** assists you in crafting impactful resumes tailored to your unique profile.
 
-🌐 **Check it out here**: [https://airesumebuilder.zenblazemedia.com/](https://airesumebuilder.zenblazemedia.com/)
+🌐 **Check it out here**: [https://resume-ai-resume-builder.vercel.app/](https://resume-ai-resume-builder.vercel.app/)
 
 ---
 
