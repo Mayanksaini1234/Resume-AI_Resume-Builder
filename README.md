@@ -44,4 +44,4 @@ Welcome to **Resume.AI** — a smart, intuitive, and user-friendly web applicati
 
 ## 💡 Get Started
 
-Visit [https://airesumebuilder.zenblazemedia.com/](https://airesumebuilder.zenblazemedia.com/) to start creating your professional resume today!
+Visit [https://resume-ai-resume-builder.vercel.app/](https://resume-ai-resume-builder.vercel.app/) to start creating your professional resume today!
