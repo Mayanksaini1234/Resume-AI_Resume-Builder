@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { Button } from "../../../components/ui/button";
 import { ArrowLeft, ArrowRight, Home, LayoutGrid } from "lucide-react";
 import PerosnalDetail from "./Form/PerosnalDetail";
-import Summary from "./Form/summary";
+import Summary from "./Form/Summary";
 import Experience from "./Form/Experience";
 import Education from "./Form/Education";
 import Skills from "./Form/Skills";
