@@ -9,7 +9,7 @@ import Education from "./Form/Education";
 import Skills from "./Form/Skills";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { FormPreviewContext } from "../../../context/FormPreviewContext";
-import ThemeColor from "./ThemeColor";
+import ThemeColor from "./ThemeColor"
 import ProjectPreview from "./Preview/ProjectsPreview";
 import Projects from "./Form/Projects";
 import Certificate from "./Form/Certificate";
@@ -30,7 +30,7 @@ const Formdata = () => {
             </Button>
           </Link>
 
-          <ThemeColor/>
+          {/* <ThemeColor/> */}
         </div>
 
         <div className="flex justify-between items-center gap-3">

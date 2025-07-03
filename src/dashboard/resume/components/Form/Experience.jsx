@@ -86,127 +86,126 @@ const Experience = ({ enableNext }) => {
 
   return (
     <div
-      className="mb-6 border-t-4 shadow-md p-4 rounded-sm bg-white"
+      className="mb-6 border-t-4 shadow-md p-6 rounded-md bg-white"
       style={{ borderColor: resumeInfo?.themeColor }}
     >
-      <h2 className="text-2xl font-bold heading">Experience</h2>
-      <p className="text-semibold mt-1 mb-3">Add your professional experience to your resume.</p>
-
-      {experience.map((data, index) => {
-        return (
-          <div
-            key={index}
-            className="border border-gray-300 rounded-lg p-4 shadow-sm mb-4 grid grid-cols-1 sm:grid-cols-2 gap-4"
-          >
-            <div>
-              <label className="block text-sm font-medium">
-                Position Title
-              </label>
-              <input
-                type="text"
-                name="title"
-                value={data?.title}
-                onChange={(event) => {
-                  handleChange(index, event);
-                }}
-                className="w-full border rounded px-2 py-1"
-                required
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium">Company Name</label>
-              <input
-                type="text"
-                name="companyName"
-                value={data?.companyName}
-                onChange={(event) => {
-                  handleChange(index, event);
-                }}
-                className="w-full border rounded px-2 py-1"
-                required
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium">City</label>
-              <input
-                type="text"
-                name="city"
-                value={data?.city}
-                onChange={(event) => {
-                  handleChange(index, event);
-                }}
-                className="w-full border rounded px-2 py-1"
-               
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium">State</label>
-              <input
-                type="text"
-                name="state"
-                value={data?.state}
-                onChange={(event) => {
-                  handleChange(index, event);
-                }}
-                className="w-full border rounded px-2 py-1"
-               
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium">Start Date</label>
-              <input
-                type="date"
-                name="startDate"
-                value={data?.startDate}
-                onChange={(event) => {
-                  handleChange(index, event);
-                }}
-                className="w-full border rounded px-2 py-1"
-                required
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium">End Date</label>
-              <input
-                type="date"
-                name="endDate"
-                value={data?.endDate}
-                onChange={(event) => {
-                  handleChange(index, event);
-                }}
-                className="w-full border rounded px-2 py-1"
-                
-              />
-            </div>
-
-            <div className="col-span-2">
-              <RichTextEditor
-                index={index}
-                defaultValue={data?.workSummery}
-                className="w-full"
-                RichTextEditorChanges={(event) => {
-                  handleRichTextEditor(event, index, "workSummery");
-                }}
-              />
-            </div>
+      <h2 className="text-2xl font-bold text-gray-800 mb-2">Experience</h2>
+      <p className="text-sm text-gray-600 mb-4">
+        Add your professional experience to your resume.
+      </p>
+  
+      {experience.map((data, index) => (
+        <div
+          key={index}
+          className="border border-gray-300 rounded-md p-4 shadow-sm mb-4 grid grid-cols-1 sm:grid-cols-2 gap-4"
+        >
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Position Title
+            </label>
+            <input
+              type="text"
+              name="title"
+              value={data?.title}
+              onChange={(event) => handleChange(index, event)}
+              className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+              required
+            />
           </div>
-        );
-      })}
-      <div className="flex justify-between items-center mt-2">
-        <div className="flex justify-between items-center gap-2">
-          <Button variant="outline" onClick={addExperience}>
-            + Add More Experience
-          </Button>
-          <Button variant="outline" onClick={removeExperience}>
-            - Remove Experience
-          </Button>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Company Name
+            </label>
+            <input
+              type="text"
+              name="companyName"
+              value={data?.companyName}
+              onChange={(event) => handleChange(index, event)}
+              className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              City
+            </label>
+            <input
+              type="text"
+              name="city"
+              value={data?.city}
+              onChange={(event) => handleChange(index, event)}
+              className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              State
+            </label>
+            <input
+              type="text"
+              name="state"
+              value={data?.state}
+              onChange={(event) => handleChange(index, event)}
+              className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Start Date
+            </label>
+            <input
+              type="date"
+              name="startDate"
+              value={data?.startDate}
+              onChange={(event) => handleChange(index, event)}
+              className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              End Date
+            </label>
+            <input
+              type="date"
+              name="endDate"
+              value={data?.endDate}
+              onChange={(event) => handleChange(index, event)}
+              className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
+          <div className="sm:col-span-2">
+            <RichTextEditor
+              index={index}
+              defaultValue={data?.workSummery}
+              className="w-full"
+              RichTextEditorChanges={(event) => {
+                handleRichTextEditor(event, index, "workSummery");
+              }}
+            />
+          </div>
         </div>
-        <Button onClick={save} disabled={loader}>
-          {loader ? <Loader className="animate-spin" /> : "Save"}
-        </Button>{" "}
-      </div>
+      ))}
+  
+  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 flex-wrap mt-4">
+  <div className="flex flex-wrap gap-3">
+    <Button variant="outline" onClick={addExperience} className="w-full sm:w-auto">
+      + Add More Experience
+    </Button>
+    <Button variant="outline" onClick={removeExperience} className="w-full sm:w-auto">
+      - Remove Experience
+    </Button>
+  </div>
+  <Button
+    onClick={save}
+    disabled={loader}
+    className="w-full sm:w-auto"
+  >
+    {loader ? <Loader className="animate-spin" /> : "Save"}
+  </Button>
+</div>
     </div>
   );
-};
+  };
 
 export default Experience;

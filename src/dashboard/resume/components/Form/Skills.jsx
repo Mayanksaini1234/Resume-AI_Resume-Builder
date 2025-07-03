@@ -99,17 +99,17 @@ const Skills = ({ enableNext }) => {
       className="mb-6 border-t-4 shadow-md p-6 rounded-lg bg-white"
       style={{ borderColor: resumeInfo?.themeColor }}
     >
-      <h2 className="text-2xl font-bold mb-2">Skills</h2>
-      <p className="font-medium text-gray-700 mb-4">
+      <h2 className="text-2xl font-bold mb-2 text-gray-800">Skills</h2>
+      <p className="text-sm text-gray-600 mb-4">
         Showcase your expertise by adding relevant skills.
       </p>
-
+  
       <div className="flex flex-col gap-6">
         {skillList.map((skill, skillIndex) => (
           <div key={skillIndex} className="border-b pb-4">
             {/* Skill Type Row */}
-            <div className="flex items-center gap-4 mb-3">
-              <label className="text-lg font-semibold text-gray-700">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-3">
+              <label className="text-base font-medium text-gray-700">
                 Skill Type:
               </label>
               <input
@@ -119,26 +119,29 @@ const Skills = ({ enableNext }) => {
                 placeholder="e.g., Language or Tool"
                 onChange={(e) => handeleTitleChange(e, skillIndex)}
                 value={skill?.skillTitle}
-                className="flex-1 bg-yellow-100 text-yellow-800  border border-yellow-300 rounded px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                className="flex-1 bg-yellow-100 text-yellow-800 border border-yellow-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
             </div>
-
-            {/* Skill Names Below */}
+  
+            {/* Skill Names */}
             <div className="flex flex-col gap-2">
-              {  skill.skillName &&  skill.skillName.map((nameData, nameIndex) => (
-                <input
-                  key={nameIndex}
-                  type="text"
-                  name="name"
-                  placeholder="e.g., C++ or Java"
-                  value={nameData?.name}
-                  onChange={(e) => handleSkillName(e, skillIndex, nameIndex)}
-                  className="w-full border border-gray-300 rounded px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                />
-              ))}
+              {skill.skillName &&
+                skill.skillName.map((nameData, nameIndex) => (
+                  <input
+                    key={nameIndex}
+                    type="text"
+                    name="name"
+                    placeholder="e.g., C++ or Java"
+                    value={nameData?.name}
+                    onChange={(e) =>
+                      handleSkillName(e, skillIndex, nameIndex)
+                    }
+                    className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+                  />
+                ))}
             </div>
-
-            {/* Buttons */}
+  
+            {/* Add/Remove Skill Buttons */}
             <div className="flex gap-3 mt-3">
               <Button
                 variant="outline"
@@ -155,7 +158,9 @@ const Skills = ({ enableNext }) => {
             </div>
           </div>
         ))}
-        <div className="flex  justify-between">
+  
+        {/* Add/Remove Section & Save */}
+        <div className="flex flex-col sm:flex-row justify-between gap-4 mt-2">
           <div className="flex gap-3">
             <Button variant="outline" onClick={addSkill}>
               + Add Section
@@ -165,13 +170,13 @@ const Skills = ({ enableNext }) => {
             </Button>
           </div>
           <Button type="submit" onClick={save} disabled={loader}>
-            {" "}
             {loader ? <Loader className="animate-spin" /> : "Save"}
           </Button>
         </div>
       </div>
     </div>
   );
+  
 };
 
 export default Skills;

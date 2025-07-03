@@ -45,7 +45,6 @@ const ThemeColor = () => {
       }
     );
   };
-
   return (
     <div>
       <Popover>
@@ -59,7 +58,7 @@ const ThemeColor = () => {
             Theme
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-56">
+        <PopoverContent className="w-56 z-50">
           <h1 className="text-sm font-semibold mb-3">Choose the Theme Color</h1>
 
           <div className="grid grid-cols-3 gap-3">

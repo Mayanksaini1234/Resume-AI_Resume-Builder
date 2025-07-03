@@ -48,121 +48,141 @@ const PerosnalDetail = ({ enableNext }) => {
   };
   return (
     <div
-      className="mb-6 border-t-4 shadow-md p-4 rounded-sm  bg-white"
+      className="mb-6 border-t-4 shadow-md p-4 rounded bg-white"
       style={{ borderColor: resumeInfo?.themeColor }}
     >
-      <h2 className="text-2xl font-bold heading">Personal Detail</h2>
-      <p className="text-semibold mt-1 mb-3">
+      <h2 className="text-2xl font-bold text-gray-800">Personal Detail</h2>
+      <p className="text-sm text-gray-600 mt-1 mb-3">
         Start with your essential personal information.
       </p>
-
+  
       <form onSubmit={save}>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium">First Name</label>
+            <label className="block text-sm font-medium text-gray-700">
+              First Name
+            </label>
             <input
               type="text"
               name="firstName"
               required
               onChange={handleChange}
               defaultValue={resumeInfo?.firstName}
-              className="w-full border rounded px-2 py-1"
+              className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Last Name</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Last Name
+            </label>
             <input
               type="text"
               name="lastName"
               required
               onChange={handleChange}
               defaultValue={resumeInfo?.lastName}
-              className="w-full border rounded px-2 py-1"
+              className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
-          <div className="col-span-2">
-            <label className="block text-sm font-medium">Job Title</label>
+          <div className="sm:col-span-2">
+            <label className="block text-sm font-medium text-gray-700">
+              Job Title
+            </label>
             <input
               type="text"
               name="jobTitle"
               required
               onChange={handleChange}
               defaultValue={resumeInfo?.jobTitle}
-              className="w-full border rounded px-2 py-1"
+              className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
-          <div className="col-span-2">
-            <label className="block text-sm font-medium">Phone</label>
+          <div className="sm:col-span-2">
+            <label className="block text-sm font-medium text-gray-700">
+              Phone
+            </label>
             <input
               type="text"
               name="phone"
               required
               onChange={handleChange}
               defaultValue={resumeInfo?.phone}
-              className="w-full border rounded px-2 py-1"
+              className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
-          <div className="col-span-2">
-            <label className="block text-sm font-medium">Email</label>
+          <div className="sm:col-span-2">
+            <label className="block text-sm font-medium text-gray-700">
+              Email
+            </label>
             <input
               type="text"
               name="email"
               required
               onChange={handleChange}
               defaultValue={resumeInfo?.email}
-              className="w-full border rounded px-2 py-1"
+              className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
-          <div className="col-span-2">
-            <label className="block text-sm font-medium">Portfolio Link</label>
+          <div className="sm:col-span-2">
+            <label className="block text-sm font-medium text-gray-700">
+              Portfolio Link
+            </label>
             <input
               type="text"
               name="portfolioUrl"
               onChange={handleChange}
               defaultValue={resumeInfo?.portfolioUrl}
-              className="w-full border rounded px-2 py-1"
+              className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium ">Profile Name 1</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Profile Name 1
+            </label>
             <input
               type="text"
               name="linkName1"
               onChange={handleChange}
               defaultValue={resumeInfo?.linkName1}
-              className="w-full border rounded px-2 py-1"
               placeholder="LinkedIn or GitHub."
+              className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Link URL</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Link URL
+            </label>
             <input
               type="text"
               name="linkUrl1"
               onChange={handleChange}
               defaultValue={resumeInfo?.linkUrl1}
-              className="w-full border rounded px-2 py-1"
+              className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Profile Name 2</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Profile Name 2
+            </label>
             <input
               type="text"
               name="linkName2"
               onChange={handleChange}
               defaultValue={resumeInfo?.linkName2}
-              className="w-full border rounded px-2 py-1"
               placeholder="LinkedIn or GitHub."
+              className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium">Link URL</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Link URL
+            </label>
             <input
               type="text"
               name="linkUrl2"
               onChange={handleChange}
               defaultValue={resumeInfo?.linkUrl2}
-              className="w-full border rounded px-2 py-1"
+              className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
         </div>
@@ -174,6 +194,7 @@ const PerosnalDetail = ({ enableNext }) => {
       </form>
     </div>
   );
+  
 };
 
 export default PerosnalDetail;
