@@ -72,12 +72,12 @@ const Skills = ({ enableNext }) => {
       ...rest,
       skillName: skillName?.map(({ id, ...nameRest }) => nameRest) || [],
     }));
-    
+    // other wise strapi will shows error
     const data = {
       data: {
-   skills1: cleanedSkills
-    }
-  }
+        skills1: cleanedSkills,
+      },
+    };
 
     globalAPI.UpdateResume(Id?.resumeId, data).then(
       (res) => {
@@ -103,7 +103,7 @@ const Skills = ({ enableNext }) => {
       <p className="text-sm text-gray-600 mb-4">
         Showcase your expertise by adding relevant skills.
       </p>
-  
+
       <div className="flex flex-col gap-6">
         {skillList.map((skill, skillIndex) => (
           <div key={skillIndex} className="border-b pb-4">
@@ -122,7 +122,7 @@ const Skills = ({ enableNext }) => {
                 className="flex-1 bg-yellow-100 text-yellow-800 border border-yellow-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
               />
             </div>
-  
+
             {/* Skill Names */}
             <div className="flex flex-col gap-2">
               {skill.skillName &&
@@ -133,14 +133,12 @@ const Skills = ({ enableNext }) => {
                     name="name"
                     placeholder="e.g., C++ or Java"
                     value={nameData?.name}
-                    onChange={(e) =>
-                      handleSkillName(e, skillIndex, nameIndex)
-                    }
+                    onChange={(e) => handleSkillName(e, skillIndex, nameIndex)}
                     className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
                   />
                 ))}
             </div>
-  
+
             {/* Add/Remove Skill Buttons */}
             <div className="flex gap-3 mt-3">
               <Button
@@ -158,7 +156,7 @@ const Skills = ({ enableNext }) => {
             </div>
           </div>
         ))}
-  
+
         {/* Add/Remove Section & Save */}
         <div className="flex flex-col sm:flex-row justify-between gap-4 mt-2">
           <div className="flex gap-3">
@@ -176,7 +174,6 @@ const Skills = ({ enableNext }) => {
       </div>
     </div>
   );
-  
 };
 
 export default Skills;

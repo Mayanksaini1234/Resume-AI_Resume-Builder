@@ -10,6 +10,7 @@ const Dashboard = () => {
   useEffect(() => {
     user && getUserData();
   }, [user]);
+
   // why we wrap it in a arrow fn + using the useEffect ,because in case if user just log out and login with diff email id then it should work smoothly.
 
   const getUserData = () => {
@@ -34,12 +35,18 @@ const Dashboard = () => {
         {getResume.length > 0
           ? getResume.map(
               (resume, index) => {
-                return <ResumeList resume={resume} key={index}  refreshData={getUserData} />;
+                return (
+                  <ResumeList
+                    resume={resume}
+                    key={index}
+                    refreshData={getUserData}
+                  />
+                );
               }
 
               // comp2
             )
-          : [1, 2, 3, 4].map((item, index) => {
+          : [1, 2, 3].map((item, index) => {
               return (
                 <div className="group relative w-full sm:w-[260px] max-w-full rounded-lg bg-slate-200 animate-pulse"></div>
               );

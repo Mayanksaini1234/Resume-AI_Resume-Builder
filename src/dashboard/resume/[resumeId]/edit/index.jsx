@@ -11,9 +11,10 @@ const EditResume = () => {
   const Id = useParams();
 
   console.log(Id?.resumeId);
+  
   useEffect(() => {
-    getResume();
     // setResume(dummy)
+    getResume();
   }, []);
 
   const getResume = () => {

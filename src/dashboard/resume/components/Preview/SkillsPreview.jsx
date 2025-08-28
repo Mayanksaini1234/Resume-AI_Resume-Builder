@@ -30,7 +30,6 @@ const SkillsPreview = ({ resumeInfo }) => {
           </div>
         ))}
 
-      {/* New Preview  */}
     </div>
   );
 };

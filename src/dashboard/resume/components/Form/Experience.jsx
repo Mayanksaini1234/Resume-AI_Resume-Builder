@@ -26,12 +26,14 @@ const Experience = ({ enableNext }) => {
   useEffect(()=>{
     resumeInfo && setExpereince(resumeInfo?.experience) 
   },[])
+  // access the default values in form inputs 
 
   const handleChange = (index, event) => {
     const { name, value } = event.target;
     enableNext(false);
 
     const experienceList = experience.slice();
+    // const experienceList = [...experience];
     experienceList[index][name] = value;
     setExpereince(experienceList);
   };

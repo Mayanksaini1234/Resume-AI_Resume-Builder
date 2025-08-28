@@ -20,9 +20,9 @@ const Summary = ({ enableNext }) => {
     try {
       setLoader(true);
       enableNext(false)
-      const PROMPT = `Job Title: ${resumeInfo.jobTitle} , Depends on job title give me list of summary for 3 experience levels (Experienced, Mid Level, Fresher) in 2-3 lines. Respond in array JSON format but with fields: experience_level and summary`;
+      const PROMPT = `Job Title: ${resumeInfo?.jobTitle} , Depends on job title give me list of summary for 3 experience levels (Experienced, Mid Level, Fresher) in 2-3 lines. Respond in array JSON format but with fields: experience_level and summary`;
 
-      console.log("Prompt:", PROMPT);
+      // console.log("Prompt:", PROMPT);
 
       const model = ai.getGenerativeModel({ model: "gemini-1.5-flash" });
       const result = await model.generateContent(PROMPT);
