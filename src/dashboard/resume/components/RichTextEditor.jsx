@@ -40,7 +40,7 @@ export default function CustomEditor({
       }
       const PROMPT = `Job Title: ${resumeInfo.experience[index].title} ,Based on this position title, give me 5-7 concise and professional bullet points suitable for a resume. Return the result in HTML bullet tags <ul><li>...</li></ul>. Do not include any headings, descriptions, or explanation text—just the HTML list and make sure Do NOT return any JSON, objects, keys, or explanations. Just the raw HTML list.`;
       console.log("Prompt:", PROMPT);
-      const model = ai.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const model = ai.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
       const result = await model.generateContent(PROMPT);
       const textResponse = await result.response.text();
       const finalResponse = textResponse

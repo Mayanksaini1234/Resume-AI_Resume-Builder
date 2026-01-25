@@ -11,338 +11,296 @@ import {
   Users,
   FileText,
   ChevronDown,
+  Download,
+  ChevronUp,
 } from "lucide-react";
 import React, { useState } from "react";
 
 function Home() {
   const [openFaq, setOpenFaq] = useState(null);
-  
+
   const faqs = [
     {
       question: "How does the AI resume builder work?",
       answer:
-        "Our AI analyzes your input and generates professional content tailored to your experience and industry. It suggests powerful action verbs, optimizes keywords, and ensures your resume stands out to both ATS systems and hiring managers.",
+        "You enter your details, and our AI instantly turns them into a clean, professional resume. It improves wording, adds strong action verbs, and optimizes keywords so your resume looks great and works well with ATS.",
     },
     {
-      question: "Is my data secure?",
+      question: "Is my data safe and private?",
       answer:
-        "Yes, we take data security seriously. All your information is encrypted and stored securely. We never share your data with third parties.",
+        "Yes. Your data is encrypted and stored securely. We never sell or share your personal information with third parties.",
     },
     {
-      question: "Can I customize the templates?",
+      question: "Can I edit and customize my resume?",
       answer:
-        "Absolutely! Our templates are fully customizable. You can adjust colors, fonts, layouts, and sections to match your personal brand.",
+        "Yes! You can fully customize your resume anytime—edit text, change sections, and adjust the layout to match your style.",
+    },
+    {
+      question: "Can I download my resume as a PDF?",
+      answer:
+        "Yes, you can preview your resume in real time and download it instantly as a high-quality PDF.",
+    },
+    {
+      question: "Will this resume work for ATS?",
+      answer:
+        "Yes. Our builder formats your resume in an ATS-friendly way and helps you include the right keywords to improve your chances of getting shortlisted.",
     },
   ];
-
+  
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-indigo-50/50 to-white dark:from-gray-900 dark:via-indigo-950/50 dark:to-gray-900">
+    <div className="min-h-screen flex flex-col bg-[#0A0A0A]">
       {/* Hero Section */}
-      <section className="relative z-50 py-20 px-6 max-w-screen-xl mx-auto text-center lg:py-32 lg:px-12">
+      <section className="relative py-32 px-6 max-w-screen-xl mx-auto text-center lg:py-40 lg:px-12">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20 blur-3xl"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/50 via-transparent to-transparent dark:from-gray-900/50"></div>
-          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.1)_0%,_transparent_70%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(120,119,198,0.1)_0%,_transparent_50%)]"></div>
         </div>
-        <h1 className="mb-6 text-5xl font-extrabold tracking-tight leading-tight text-gray-900 md:text-6xl lg:text-7xl dark:text-white">
+        <h1 className="mb-6 text-5xl font-extrabold tracking-tight leading-tight text-white md:text-6xl lg:text-7xl">
           Build Your Resume{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 via-purple-400 to-purple-600">
             With AI
           </span>
         </h1>
-        <p className="mb-10 max-w-3xl mx-auto text-xl font-normal text-gray-600 lg:text-2xl dark:text-gray-400">
-          Effortlessly craft a standout resume with our AI-powered builder — get
-          noticed by employers faster.
+        <p className="mb-10 max-w-3xl mx-auto text-xl font-normal text-[#BBBBBB] lg:text-2xl">
+          Take control of your career, stay focused, and achieve more with every resume you build.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
             to="/dashboard"
-            className="group inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-white rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 focus:ring-4 focus:ring-indigo-500/50 dark:focus:ring-indigo-500/30 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/25"
+            className="group relative inline-flex items-center justify-center px-12 py-5 text-lg font-bold text-[#0A0A0A] bg-white rounded-xl hover:bg-gray-50 transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 shadow-2xl shadow-white/30 hover:shadow-2xl hover:shadow-white/50 overflow-hidden"
           >
-            Get Started
-            <Sparkles className="w-5 h-5 group-hover:animate-pulse" />
-          </Link>
-          <Link
-            to="/tips"
-            className="group inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-gray-700 dark:text-gray-200 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-          >
-            Learn More
-            <svg
-              className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+            <span className="relative z-10 transition-all duration-300 group-hover:tracking-wider flex items-center gap-2">
+              Get Started
+              <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
+            {/* Shimmer effect */}
+            <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
+            {/* Gradient glow overlay */}
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-500/0 via-indigo-500/0 to-pink-500/0 group-hover:from-purple-500/12 group-hover:via-indigo-500/12 group-hover:to-pink-500/12 transition-all duration-700"></div>
+            {/* Subtle pulse on hover */}
+            <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 group-hover:animate-pulse-subtle bg-white/8"></div>
+            {/* Glowing border */}
+            <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-white/30 transition-all duration-500"></div>
+            {/* Background glow effect */}
+            <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-purple-500/0 via-indigo-500/0 to-pink-500/0 group-hover:from-purple-500/20 group-hover:via-indigo-500/20 group-hover:to-pink-500/20 blur-md transition-all duration-700 -z-10"></div>
           </Link>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-6 max-w-screen-xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center p-6 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700">
-            <Users className="h-8 w-8 text-indigo-600 dark:text-indigo-400 mx-auto mb-4" />
-            <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-              100%{" "}
-            </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">
-              Free to Start
-            </div>
-          </div>
-
-          <div className="text-center p-6 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700">
-            <Star className="h-8 w-8 text-indigo-600 dark:text-indigo-400 mx-auto mb-4" />
-            <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-              4.9/5
-            </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">
-              User Rating
-            </div>
-          </div>
-          <div className="text-center p-6 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700">
-            <CheckCircle2 className="h-8 w-8 text-indigo-600 dark:text-indigo-400 mx-auto mb-4" />
-            <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-              85%
-            </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">
-              Success Rate
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20 px-6 max-w-screen-xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Why Choose Us</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full mx-auto"></div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="group p-6 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700">
-            <div className="relative">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative p-6">
-                <Zap className="h-10 w-10 text-indigo-600 dark:text-indigo-400 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">
-                  AI-Powered Writing
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Smart suggestions and content optimization powered by advanced
-                  AI technology.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="group p-6 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700">
-            <div className="relative">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative p-6">
-                <CheckCircle2 className="h-10 w-10 text-indigo-600 dark:text-indigo-400 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">ATS-Friendly</h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Optimized for Applicant Tracking Systems to ensure your resume
-                  gets noticed.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="group p-6 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700">
-            <div className="relative">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative p-6">
-                <Sparkles className="h-10 w-10 text-indigo-600 dark:text-indigo-400 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">
-                  Professional Templates
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Choose from a variety of modern, professional templates
-                  designed to impress.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="py-20 px-6 max-w-screen-xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">How It Works</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full mx-auto"></div>
-          <p className="mt-6 text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Create your professional resume in just three simple steps.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-          {/* Step 1 */}
-          <article className="group relative">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-            <div className="relative border rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-gray-100 dark:border-gray-700">
-              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center text-white font-bold text-xl">
-                1
-              </div>
-              <AtomIcon className="h-12 w-12 text-indigo-600 dark:text-indigo-400 mb-6" />
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
-                Write Your Prompt
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Start by entering key details about your experience and goals.
-                Our AI will help tailor your resume content perfectly.
-              </p>
-            </div>
-          </article>
-
-          {/* Step 2 */}
-          <article className="group relative">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-            <div className="relative border rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-gray-100 dark:border-gray-700">
-              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center text-white font-bold text-xl">
-                2
-              </div>
-              <Edit className="h-12 w-12 text-indigo-600 dark:text-indigo-400 mb-6" />
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
-                Edit Your Form
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Review and customize your details. Our smart form guides you to
-                highlight your skills and achievements.
-              </p>
-            </div>
-          </article>
-
-          {/* Step 3 */}
-          <article className="group relative">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-            <div className="relative border rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-gray-100 dark:border-gray-700">
-              <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center text-white font-bold text-xl">
-                3
-              </div>
-              <Share2 className="h-12 w-12 text-indigo-600 dark:text-indigo-400 mb-6" />
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
-                Download & Share
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Download your ATS-friendly resume in PDF format and
-                share it easily with employers and recruiters.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      {/* Testimonials Section
-      <section className="py-20 px-6 max-w-screen-xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">What Our Users Say</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full mx-auto"></div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-6 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
-            <div className="flex items-center mb-4">
-              <div className="flex text-yellow-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-current" />
-                ))}
-              </div>
-            </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">
-              "The AI suggestions were incredibly helpful. I landed my dream job
-              within weeks of using this resume builder!"
+      <section className="py-20 px-6 bg-[#0A0A0A]">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold mb-4 text-white tracking-wide">
+              Build Resumes at Your Fingertips
+            </h2>
+            <p className="text-lg text-[#BBBBBB]">
+              Say goodbye to delays, hello to instant resume creation
             </p>
-            <div className="font-semibold text-gray-900 dark:text-white">
-              Tushar Sharma
-            </div>
           </div>
-          <div className="p-6 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
-            <div className="flex items-center mb-4">
-              <div className="flex text-yellow-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-current" />
-                ))}
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="text-sm text-[#BBBBBB] mb-2">Resumes Created</div>
+              <div className="text-6xl font-bold text-white mb-2">30+</div>
+              <div className="text-sm text-[#BBBBBB]">Trusted by users</div>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">
-              "The templates are professional and the AI suggestions really
-              helped me highlight my achievements better."
-            </p>
-            <div className="font-semibold text-gray-900 dark:text-white">
-              Nitish Sharma
+            <div className="text-center">
+              <div className="text-sm text-[#BBBBBB] mb-2">Generation Speed</div>
+              <div className="text-6xl font-bold text-white mb-2">0.5s</div>
+              <div className="text-sm text-[#BBBBBB]">Lightning-fast results</div>
             </div>
-          </div>
-          <div className="p-6 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
-            <div className="flex items-center mb-4">
-              <div className="flex text-yellow-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-current" />
-                ))}
-              </div>
-            </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">
-              "Best resume builder I've used. The ATS optimization feature is a
-              game-changer for job applications."
-            </p>
-            <div className="font-semibold text-gray-900 dark:text-white">
-              Rohit Saini
+            <div className="text-center">
+              <div className="text-sm text-[#BBBBBB] mb-2">Efficiency</div>
+              <div className="text-6xl font-bold text-white mb-2">10x</div>
+              <div className="text-sm text-[#BBBBBB]">Redefining speed</div>
             </div>
           </div>
         </div>
       </section>
- */}
-      {/* FAQ Section */}
-      <section className="py-20 px-6 max-w-screen-xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">
-            Frequently Asked Questions
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full mx-auto"></div>
-          <p className="mt-6 text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Find answers to common questions about our AI-powered resume builder
-          </p>
-        </div>
-        <div className="max-w-3xl mx-auto">
-          {faqs.map((faq, index) => (
-            <div key={index} className="mb-4">
-              <button
-                className="w-full text-left p-6 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group"
-                onClick={() => setOpenFaq(openFaq === index ? null : index)}
+
+      {/* Dashboard Visualization Section */}
+      <section className="py-20 px-6 bg-[#0A0A0A] flex justify-center items-center">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+          <div className="lg:col-span-3">
+              <h2 className="text-5xl font-bold text-white mb-6 leading-tight">
+                Create Resumes <br /> Without
+                the Hassle
+              </h2>
+              <Link
+                to="/dashboard"
+                className="group inline-flex items-center gap-2 px-8 py-3.5 text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 hover:scale-105 shadow-lg shadow-purple-500/20"
               >
-                <div className="flex justify-between items-center">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                    {faq.question}
-                  </h3>
-                  <div className="flex items-center">
-                    <ChevronDown
-                      className={`w-5 h-5 text-gray-500 transition-all duration-300 ${
-                        openFaq === index ? "transform rotate-180 text-indigo-600 dark:text-indigo-400" : ""
-                      }`}
-                    />
-                  </div>
-                </div>
-                <div
-                  className={`grid transition-all duration-300 ${
-                    openFaq === index ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0"
-                  }`}
-                >
-                  <div className="overflow-hidden">
-                    <p className="text-gray-600 dark:text-gray-400">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </div>
-              </button>
+                Start Your Career Journey
+                <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </Link>
             </div>
-          ))}
+            <div className="lg:col-span-2">
+              
+              <div className="bg-[#1A1A1A] rounded-xl p-8 border border-[#2A2A2A] relative overflow-hidden">
+                {/* Background gradient effect */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 rounded-full blur-3xl"></div>
+
+                <div className="mb-6 relative z-10">
+                  <div className="text-sm text-[#BBBBBB] font-medium mb-1">Your Career Path</div>
+                  <div className="text-2xl font-bold text-white mb-2">Follow These Steps</div>
+                  <div className="text-sm text-[#BBBBBB]">Complete each step to advance your career</div>
+                </div>
+
+                <div className="space-y-4 relative z-10">
+                  {[
+                    { step: 1, label: "Open Resume Builder", status: "complete", progress: 100 },
+                    { step: 2, label: "Login / Sign Up", status: "complete", progress: 100 },
+                    { step: 3, label: "Fill Your Details", status: "complete", progress: 75 },
+                    { step: 4, label: "Use AI to Improve", status: "complete", progress: 0 },
+                    { step: 5, label: "Download PDF", status: "in-progress", progress: 0 },
+                  ]
+                    .map((item, i) => (
+                      <div key={i} className="relative">
+                        {/* Connecting line */}
+                        {i < 4 && (
+                          <div className={`absolute left-6 top-12 w-0.5 h-12 ${item.status === 'complete' ? 'bg-gradient-to-b from-green-500 to-purple-500' : 'bg-[#2A2A2A]'
+                            }`}></div>
+                        )}
+
+                        <div className={`flex items-start gap-4 p-4 rounded-lg border transition-all duration-300 ${item.status === 'complete'
+                          ? 'bg-[#1A2A1A]/50 border-green-500/30'
+                          : item.status === 'in-progress'
+                            ? 'bg-[#1A1A2A]/50 border-purple-500/30'
+                            : 'bg-[#1A1A1A] border-[#2A2A2A]'
+                          }`}>
+                          {/* Step number */}
+                          <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg ${item.status === 'complete'
+                            ? 'bg-gradient-to-br from-green-500 to-emerald-500 text-white'
+                            : item.status === 'in-progress'
+                              ? 'bg-gradient-to-br from-purple-500 to-indigo-500 text-white'
+                              : 'bg-[#2A2A2A] text-[#BBBBBB] border border-[#444444]'
+                            }`}>
+                            {item.status === 'complete' ? (
+                              <CheckCircle2 className="w-6 h-6" />
+                            ) : (
+                              item.step
+                            )}
+                          </div>
+
+                          {/* Content */}
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between mb-1">
+                              <h3 className={`text-base font-semibold ${item.status === 'complete' ? 'text-green-400' : item.status === 'in-progress' ? 'text-purple-400' : 'text-white'
+                                }`}>
+                                {item.label}
+                              </h3>
+                              {item.status === 'in-progress' && (
+                                <span className="text-xs text-purple-400 font-medium">{item.progress}%</span>
+                              )}
+                            </div>
+                            <p className="text-sm text-[#BBBBBB] mb-2">{item.description}</p>
+
+                            {/* Progress bar for in-progress items */}
+                            {item.status === 'in-progress' && (
+                              <div className="w-full h-1.5 bg-[#2A2A2A] rounded-full overflow-hidden">
+                                <div
+                                  className="h-full bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full transition-all duration-700"
+                                  style={{ width: `${item.progress}%` }}
+                                >
+                                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+
+              
+              </div>
+            </div>
+           
+          </div>
         </div>
       </section>
 
+
+      {/* FAQ Section */}
+      <section className="py-20 px-6 bg-[#0A0A0A]">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-white mb-6 leading-tight">
+              Frequently Asked
+              <br />
+              Questions
+            </h2>
+            <p className="text-lg text-[#BBBBBB]">
+              Have another question? Please contact our team!
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            {faqs.map((faq, index) => (
+              <div key={index} className="mb-4">
+                <button
+                  className="w-full text-left p-6 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] hover:bg-[#2A2A2A] transition-all duration-300 group"
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                >
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-xl font-semibold text-white">
+                      {faq.question}
+                    </h3>
+                    <div className="flex items-center">
+                      {openFaq === index ? (
+                        <ChevronUp className="w-5 h-5 text-white transition-all duration-300" />
+                      ) : (
+                        <ChevronDown className="w-5 h-5 text-white transition-all duration-300" />
+                      )}
+                    </div>
+                  </div>
+                  <div
+                    className={`grid transition-all duration-300 ${openFaq === index ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0"
+                      }`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="text-base text-[#BBBBBB]">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Banner Container */}
+      <section className="py-20 px-6 bg-[#1A1A1A]">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="rounded-2xl bg-[#1A1A1A] border border-[#2A2A2A] p-12 text-center relative overflow-hidden">
+            <div className="absolute inset-0 opacity-5" style={{
+              backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px)`
+            }}></div>
+            <div className="relative z-10">
+              <h2 className="text-5xl font-bold text-white mb-6 leading-tight">
+                Build Smarter with the
+                <br />
+                Resume Builder Built for Success
+              </h2>
+              <p className="text-lg text-[#BBBBBB] mb-8 max-w-2xl mx-auto">
+                Create resumes, optimize content, and land interviews faster with ease
+              </p>
+              <Link
+                to="/dashboard"
+                className="inline-flex items-center gap-2 px-8 py-4 text-base font-medium text-[#0A0A0A] bg-white rounded-lg hover:bg-gray-100 transition-all"
+              >
+                Get Started Now
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
       <Footer />

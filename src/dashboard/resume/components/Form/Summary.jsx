@@ -1,4 +1,3 @@
-
 import React, { useContext, useState } from "react";
 import { Button } from "../../../../components/ui/button";
 import globalAPI from "../../../../../service/globalAPI";
@@ -19,12 +18,16 @@ const Summary = ({ enableNext }) => {
   const GenerateSummeryFromAI = async () => {
     try {
       setLoader(true);
-      enableNext(false)
+      enableNext(false);
       const PROMPT = `Job Title: ${resumeInfo?.jobTitle} , Depends on job title give me list of summary for 3 experience levels (Experienced, Mid Level, Fresher) in 2-3 lines. Respond in array JSON format but with fields: experience_level and summary`;
 
-      // console.log("Prompt:", PROMPT);
+      console.log("Prompt:", PROMPT);
 
-      const model = ai.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const model = ai.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
+
+      const result1 = await model.generateContent("hello");
+      console.log(result1.response.text());
+
       const result = await model.generateContent(PROMPT);
       const textResponse = await result.response.text();
       const cleanedText = textResponse.replace(/```json|```/g, "").trim();
@@ -37,7 +40,7 @@ const Summary = ({ enableNext }) => {
       toast.error("Failed to generate summary");
     } finally {
       setLoader(false);
-      enableNext(true)
+      enableNext(true);
     }
   };
 
@@ -81,7 +84,7 @@ const Summary = ({ enableNext }) => {
       (err) => {
         console.log(err);
         setLoader(false);
-      }
+      },
     );
   };
 
